@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="is">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5a0c14">
+  <meta name="description" content="Ný íslensk jólakrossgáta á hverjum degi frá 1. til 24. desember.">
+  <title>Jólakrossgátan · Jólahorn Reykjanesbæjar</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./game.mjs"></script>
+</head>
+<body>
+  <a class="skip-link" href="#leikurinn">Fara í krossgátuna</a>
+
+  <div class="page">
+    <header class="topbar">
+      <span class="brand"><span class="brand-mark" aria-hidden="true">✦</span> Jólahorn</span>
+      <span class="edition">Desember 2026</span>
+    </header>
+
+    <main>
+      <div class="hero">
+        <span class="ornament" aria-hidden="true">✦</span>
+        <h1>Jólakrossgátan</h1>
+        <p>Ný krossgáta á hverjum degi fram að jólum.</p>
+      </div>
+
+      <div class="game-layout">
+        <section class="puzzle-card" id="leikurinn" aria-labelledby="puzzle-title" tabindex="-1">
+          <div class="puzzle-heading">
+            <div>
+              <p id="puzzle-date" class="puzzle-date"></p>
+              <h2 id="puzzle-title">Krossgáta dagsins</h2>
+            </div>
+            <span id="puzzle-state" class="puzzle-state" hidden></span>
+          </div>
+
+          <div id="cover" class="cover">
+            <div id="cover-pattern" class="cover-pattern" aria-hidden="true"></div>
+            <div class="cover-message">
+              <h3 id="cover-title">Fyrsta gátan opnar 1. desember</h3>
+              <p id="cover-description">Þá bætist fyrsta krossgátan í dagatalið.</p>
+              <button id="start" class="primary-button" type="button" hidden>Byrja <span aria-hidden="true">→</span></button>
+            </div>
+          </div>
+
+          <div id="play" hidden>
+            <p id="active-clue" class="active-clue" aria-live="polite"></p>
+            <div class="play-layout">
+              <div class="board-column">
+                <p id="keyboard-help" class="visually-hidden">Notaðu örvatakkana til að færa þig og bil til að skipta um stefnu á krossreit.</p>
+                <div id="board" class="board" role="group" aria-label="Reitir krossgátunnar" aria-describedby="keyboard-help"></div>
+                <div id="letters" class="letters" role="group" aria-label="Íslenskir stafir"></div>
+              </div>
+              <div id="clues" class="clues">
+                <section aria-labelledby="across-title">
+                  <h3 id="across-title">Lárétt</h3>
+                  <ul id="across"></ul>
+                </section>
+                <section aria-labelledby="down-title">
+                  <h3 id="down-title">Lóðrétt</h3>
+                  <ul id="down"></ul>
+                </section>
+              </div>
+            </div>
+            <div class="play-footer">
+              <p id="feedback" class="feedback" role="status" aria-atomic="true"></p>
+              <button id="check" class="primary-button" type="button">Athuga lausn</button>
+            </div>
+          </div>
+          <noscript><p class="noscript">Kveiktu á JavaScript í vafranum til að leysa krossgátuna.</p></noscript>
+        </section>
+
+        <aside class="calendar" aria-labelledby="calendar-title">
+          <h2 id="calendar-title">Desember</h2>
+          <p id="calendar-description">1.–24. desember</p>
+          <div id="days" class="days" role="group" aria-label="Veldu dag í desember"></div>
+          <p class="calendar-note"><span class="lock" aria-hidden="true"></span> Næsta gáta opnar á miðnætti að íslenskum tíma.</p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="page-footer">Jólahorn Reykjanesbæjar</footer>
+  </div>
+</body>
+</html>
